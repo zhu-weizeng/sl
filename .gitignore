@@ -1,0 +1,14 @@
+NotebookOfTest/
+*.csv
+*.txt
+__pycache__
+*.json
+pyzwz/config.py
+getcode*
+xcx.py
+hltl_data.py
+huluo_tailuo.py
+spider_five_dimension_site_project.py
+spider_eagle_*
+upload_hltl_data.py
+test/
