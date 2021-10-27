@@ -18,7 +18,7 @@ def get_downloadInfo(report_name, conditions):
         dic_payload['conditions'][k]['condition_value'] = v
     jpayload = json.dumps(dic_payload)
 
-    url = 'http://172.16.116.70:11280/eagle-metabase/api/metabase/putDownloadParams'
+    url = 'http://**/eagle-metabase/api/metabase/putDownloadParams'
     response = requests.post(url=url, headers=headers, data=jpayload)
     downloadItemCode = json.loads(response.text)["data"]
     reportid = report[report_name]['reportid']
@@ -26,7 +26,7 @@ def get_downloadInfo(report_name, conditions):
 
 
 def get_eagle_data(reportid, downloadItemCode):
-    download_url = 'http://172.16.116.70:11280/eagle-metabase/api/metabase/queryReportXYDownload?id=' + \
+    download_url = 'http://**/eagle-metabase/api/metabase/queryReportXYDownload?id=' + \
         reportid + '&conditions=' + downloadItemCode
     data = requests.get(url=download_url, headers=headers).content
     return data
